@@ -1,9 +1,10 @@
 name: My first Action
 on: [push]
 jobs:
-  exempel:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-    - name: print push success
-      run: echo "push sucssesful!"
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: print push success
+        run: echo "push successful!"
+
