@@ -5,15 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: print push success
+      - name: print pull request success
         run: echo "pull request successful!"
 
-        print:
-          runs-on: ubuntu-latest
-          steps:
-            - uses: actions/checkout@v4
-            - name: print files
-              run: ls-a
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: print files
+        run: ls -a
+
 
 
 
