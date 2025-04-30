@@ -15,7 +15,7 @@ jobs:
       - name: print files
         run: ls -a
 
-print-date-files:
+print:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v4
