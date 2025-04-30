@@ -1,20 +1,30 @@
 name: My first Action
-on: [pull_request]
+on: [push,pull_request]
 jobs:
   example:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: print pull request success
+        run: echo "pull request successful!"
+
+  print:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: print push success
-        run: echo "pull request successful!"
+        run: echo "push detected"
 
-        print:
-          runs-on: ubuntu-latest
-          steps:
-            - uses: actions/checkout@v4
-            - name: print files
-              run: ls-a
-
+  print-date-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write out date
+        run: date
+      - name: List all files
+        run: ls -a
 
 
 
